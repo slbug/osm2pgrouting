@@ -157,9 +157,10 @@ int main(int argc, char* argv[]) {
             std::cout << "\nExport Ways ..." << endl;
             dbConnection.exportWays(document.ways(), config);
 
-
-            std::cout << "Creating Foreign Keys ..." << endl;
-            dbConnection.createFKeys();
+            if (clean) {
+                std::cout << "Creating Foreign Keys ..." << endl;
+                dbConnection.createFKeys();
+            }
         }
 
 
